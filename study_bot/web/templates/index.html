@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوت الدراسة والتحفيز</title>
+    <!-- تضمين Bootstrap CSS -->
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    <!-- تضمين الخطوط العربية -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tajawal:400,500,700&display=swap">
+    <style>
+        body {
+            font-family: 'Tajawal', Arial, sans-serif;
+        }
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+        .feature-card {
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- القسم الرئيسي -->
+    <section class="hero bg-dark text-white">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h1 class="display-4 fw-bold mb-4">بوت الدراسة والتحفيز</h1>
+                    <p class="lead mb-4">بوت تيليغرام مصمم لمساعدتك على تنظيم وقت الدراسة، زيادة الالتزام وتحسين التركيز من خلال المعسكرات الدراسية والرسائل التحفيزية.</p>
+                    <div class="d-flex gap-3 mt-5">
+                        <a href="https://t.me/Study_schedule501_bot" class="btn btn-primary btn-lg" target="_blank">استخدام البوت</a>
+                        <a href="/dashboard" class="btn btn-outline-light btn-lg">لوحة التحكم</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2382/2382528.png" alt="بوت الدراسة والتحفيز" class="img-fluid" style="max-width: 350px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المميزات -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">مميزات البوت</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card feature-card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon">🗓️</div>
+                            <h4 class="card-title">جداول دراسية مخصصة</h4>
+                            <p class="card-text">جداول صباحية ومسائية ومخصصة لتناسب جميع احتياجات الدراسة، مع تذكيرات في الأوقات المناسبة.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card feature-card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon">🏕️</div>
+                            <h4 class="card-title">معسكرات دراسية</h4>
+                            <p class="card-text">معسكرات دراسية للمجموعات تعزز الالتزام والتحفيز، مع نظام نقاط وتقارير يومية للمشاركين.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card feature-card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon">✨</div>
+                            <h4 class="card-title">رسائل تحفيزية</h4>
+                            <p class="card-text">رسائل تحفيزية منتظمة تساعدك على الاستمرار والتغلب على تحديات الدراسة وتحسين الإنتاجية.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المعسكرات -->
+    <section class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h2 class="mb-4">المعسكرات الدراسية</h2>
+                    <p class="lead">تقدم المعسكرات الدراسية بيئة تعاونية تساعد المستخدمين على الالتزام بجداول الدراسة وتبادل الخبرات.</p>
+                    <ul class="list-unstyled mt-4">
+                        <li class="mb-3">✓ مهام دراسية مجدولة بدقة</li>
+                        <li class="mb-3">✓ تقارير يومية عن مستوى الإنجاز</li>
+                        <li class="mb-3">✓ مسابقات لزيادة الحماس والتفاعل</li>
+                        <li class="mb-3">✓ نظام نقاط تنافسي لتعزيز المشاركة</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5956/5956830.png" alt="المعسكرات الدراسية" class="img-fluid" style="max-width: 300px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الاحصائيات -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">إحصائيات البوت</h2>
+            <div class="row text-center">
+                <div class="col-md-3 mb-4">
+                    <h3 class="display-4 fw-bold text-primary" id="usersCount">1000+</h3>
+                    <p class="lead">مستخدم نشط</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h3 class="display-4 fw-bold text-primary" id="groupsCount">100+</h3>
+                    <p class="lead">مجموعة دراسية</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h3 class="display-4 fw-bold text-primary" id="campsCount">25+</h3>
+                    <p class="lead">معسكر دراسي</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h3 class="display-4 fw-bold text-primary" id="messagesCount">10K+</h3>
+                    <p class="lead">رسالة تحفيزية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التواصل -->
+    <section class="py-5 bg-dark text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">كيفية البدء</h2>
+            <p class="lead mb-5">يمكنك البدء باستخدام بوت الدراسة والتحفيز بسهولة. فقط اضغط على الزر أدناه للدخول إلى البوت وبدء رحلتك التعليمية المنظمة!</p>
+            <a href="https://t.me/Study_schedule501_bot" class="btn btn-primary btn-lg" target="_blank">استخدام البوت الآن</a>
+        </div>
+    </section>
+
+    <!-- تذييل الصفحة -->
+    <footer class="py-4 bg-light text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 - بوت الدراسة والتحفيز | جميع الحقوق محفوظة</p>
+            <p class="text-muted">تطوير: @M_o_h_a_m_e_d_501</p>
+        </div>
+    </footer>
+
+    <!-- تضمين Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // تحديث الإحصائيات عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/api/stats')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.total_users) document.getElementById('usersCount').textContent = data.total_users + '+';
+                    if (data.total_groups) document.getElementById('groupsCount').textContent = data.total_groups + '+';
+                    if (data.active_camps) document.getElementById('campsCount').textContent = data.active_camps + '+';
+                    if (data.messages_sent) document.getElementById('messagesCount').textContent = Math.floor(data.messages_sent/1000) + 'K+';
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

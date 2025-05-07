@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - بوت الدراسة والتحفيز</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap RTL -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dashboard-body">
+    <header class="dashboard-header">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="dashboard-title">لوحة تحكم بوت الدراسة والتحفيز</h1>
+                <a href="/" class="btn btn-outline-light">الرئيسية</a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="stats-card">
+                    <div class="stats-card-body">
+                        <h3 class="stats-card-title">إحصائيات المستخدمين</h3>
+                        <div class="big-number" id="total-users">-</div>
+                        <p class="text-center">عدد المستخدمين الكلي</p>
+                        <div class="stats-details">
+                            <div class="stat-item">
+                                <span class="stat-label">المستخدمون النشطون:</span>
+                                <span class="stat-value" id="active-users">-</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">المجموعات:</span>
+                                <span class="stat-value" id="total-groups">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="stats-card">
+                    <div class="stats-card-body">
+                        <h3 class="stats-card-title">إحصائيات الجداول</h3>
+                        <div class="stats-details">
+                            <div class="stat-item">
+                                <span class="stat-label">الجدول الصباحي:</span>
+                                <span class="stat-value" id="morning-users">-</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">الجدول المسائي:</span>
+                                <span class="stat-value" id="evening-users">-</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">جدول مخصص:</span>
+                                <span class="stat-value" id="custom-users">-</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">بدون جدول:</span>
+                                <span class="stat-value" id="no-schedule-users">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="stats-card">
+                    <div class="stats-card-body">
+                        <h3 class="stats-card-title">إحصائيات النقاط</h3>
+                        <div class="big-number" id="total-points">-</div>
+                        <p class="text-center">إجمالي النقاط المكتسبة</p>
+                        <div class="stats-details">
+                            <div class="stat-item">
+                                <span class="stat-label">متوسط النقاط:</span>
+                                <span class="stat-value" id="avg-points">-</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">أيام مكتملة:</span>
+                                <span class="stat-value" id="completed-days">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="stats-card">
+                    <div class="stats-card-body">
+                        <h3 class="stats-card-title">أفضل المستخدمين</h3>
+                        <div class="top-users-list" id="top-users-list">
+                            <div class="text-center">جاري التحميل...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 mb-4">
+                <div class="stats-card">
+                    <div class="stats-card-body">
+                        <h3 class="stats-card-title">نشاط المستخدمين في الأسبوع الماضي</h3>
+                        <div class="chart-container">
+                            <canvas id="activity-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="stats-card">
+                    <div class="stats-card-body">
+                        <h3 class="stats-card-title">إرسال رسالة إلى المستخدمين</h3>
+                        <form id="broadcast-form">
+                            <div class="mb-3">
+                                <label for="broadcast-message" class="form-label">نص الرسالة:</label>
+                                <textarea id="broadcast-message" class="form-control" rows="5" placeholder="اكتب رسالتك هنا..." required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <button type="submit" class="btn btn-primary w-100">إرسال الرسالة</button>
+                            </div>
+                            <div id="broadcast-result"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="stats-card">
+                    <div class="stats-card-body">
+                        <h3 class="stats-card-title">توزيع استخدام الجداول</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="chart-container">
+                                    <canvas id="schedules-chart"></canvas>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="chart-container">
+                                    <canvas id="tasks-completion-chart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="dashboard-footer py-3">
+        <div class="container-fluid text-center">
+            <p>جميع الحقوق محفوظة &copy; <span class="footer-year">{{ current_year }}</span> - بوت جدول الدراسة والتحفيز</p>
+        </div>
+    </footer>
+
+    <!-- Loader -->
+    <div id="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Dashboard JS -->
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

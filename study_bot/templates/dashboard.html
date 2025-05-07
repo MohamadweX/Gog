@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ar" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - بوت الدراسة والتحفيز</title>
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <style>
+        body {
+            direction: rtl;
+            text-align: right;
+            padding-top: 2rem;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .card {
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .stats-box {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+        .stats-box h4 {
+            margin-bottom: 0.5rem;
+        }
+        .stats-box .number {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">بوت الدراسة والتحفيز</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/dashboard">لوحة التحكم</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">حول البوت</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/help">المساعدة</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <h1 class="mb-4">لوحة التحكم</h1>
+        
+        <div class="alert alert-info">
+            <strong>مرحباً!</strong> هذه لوحة التحكم الخاصة بك. يمكنك متابعة تقدمك وإدارة جداولك الدراسية.
+        </div>
+
+        <!-- إحصائيات سريعة -->
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="stats-box bg-primary text-white">
+                    <h4>النقاط الكلية</h4>
+                    <div class="number">0</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-box bg-success text-white">
+                    <h4>نقاط الصباح</h4>
+                    <div class="number">0</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-box bg-info text-white">
+                    <h4>نقاط المساء</h4>
+                    <div class="number">0</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-box bg-warning text-dark">
+                    <h4>معسكرات نشطة</h4>
+                    <div class="number">0</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- جداولك الدراسية -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title mb-0">جداولك الدراسية</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>لم تشترك بأي جدول دراسي بعد.</p>
+                        <div class="list-group mt-3">
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                الجدول الصباحي
+                                <span class="badge bg-primary rounded-pill">انضمام</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                الجدول المسائي
+                                <span class="badge bg-primary rounded-pill">انضمام</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                جدول مخصص
+                                <span class="badge bg-secondary rounded-pill">قريبًا</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- المعسكرات النشطة -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="card-title mb-0">المعسكرات النشطة</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>لم تنضم إلى أي معسكر دراسي بعد.</p>
+                        <div class="text-center mt-3">
+                            <a href="#" class="btn btn-outline-primary">استعراض المعسكرات المتاحة</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- المهام القادمة -->
+        <div class="card mt-4">
+            <div class="card-header bg-info text-white">
+                <h5 class="card-title mb-0">المهام القادمة</h5>
+            </div>
+            <div class="card-body">
+                <p>لم يتم تحديد أي مهام قادمة. انضم إلى جدول دراسي لبدء المتابعة.</p>
+            </div>
+        </div>
+
+        <!-- روابط سريعة -->
+        <div class="card mt-4">
+            <div class="card-header bg-secondary text-white">
+                <h5 class="card-title mb-0">روابط سريعة</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-2">
+                        <a href="#" class="btn btn-outline-primary w-100">الانضمام للبوت</a>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <a href="#" class="btn btn-outline-success w-100">إحصائياتي</a>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <a href="#" class="btn btn-outline-info w-100">تقارير الأداء</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white mt-5 py-3">
+        <div class="container text-center">
+            <p>© 2025 بوت الدراسة والتحفيز. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

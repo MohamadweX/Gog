@@ -1,0 +1,31 @@
+# بيئة التطوير
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+venv/
+ENV/
+.venv/
+
+# سجلات وملفات مؤقتة
+*.log
+logs/
+*.tmp
+*.bak
+*.swp
+
+# ملفات النظام
+.DS_Store
+Thumbs.db
+
+# ملفات Replit
+.replit
+.breakpoints
+replit.nix
+replit_agent/
+.cache/
+
+# ملفات الأمان والتوكنات (تجنب حفظ المعلومات الحساسة)
+*.pem
+*.key
